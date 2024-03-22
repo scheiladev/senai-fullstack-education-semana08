@@ -12,7 +12,7 @@ public class AlunoService {
     return AlunoModel.getListaAlunos();
   }
 
-  public AlunoModel salvar(AlunoModel aluno) {
+  public AlunoModel salvar(AlunoModel aluno) throws Exception {
     if (validar(aluno)) {
       return AlunoModel.incluir(aluno);
     }
