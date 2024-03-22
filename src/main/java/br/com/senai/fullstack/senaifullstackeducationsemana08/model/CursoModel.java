@@ -19,6 +19,7 @@ public class CursoModel {
   private String nome;
   private String descricao;
   private Integer cargaHoraria;
+  private List<AlunoModel> alunosCurso = new ArrayList<>();
 
   private static Integer getProximoId() {
     return proximoId++;
@@ -28,6 +29,19 @@ public class CursoModel {
     curso.id = getProximoId();
     listaCursos.add(curso);
     return curso;
+  }
+
+  public static CursoModel buscarPorId(Integer id) throws Exception {
+    for (CursoModel curso : listaCursos) {
+      if (curso.getId().equals(id)) {
+        return curso;
+      }
+    }
+    throw new Exception("Aluno não encontrado!");
+  }
+
+  public static void matricular(CursoModel curso, AlunoModel aluno) {
+    curso.getAlunosCurso().add(aluno);
   }
 
 }

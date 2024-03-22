@@ -12,6 +12,10 @@ public class AlunoService {
     return AlunoModel.getListaAlunos();
   }
 
+  public AlunoModel buscarPorId(Integer id) throws Exception {
+    return AlunoModel.buscarPorId(id);
+  }
+
   public AlunoModel salvar(AlunoModel aluno) throws Exception {
     if (validar(aluno)) {
       return AlunoModel.incluir(aluno);

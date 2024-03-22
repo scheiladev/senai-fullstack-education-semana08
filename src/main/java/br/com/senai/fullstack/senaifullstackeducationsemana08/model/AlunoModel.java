@@ -29,5 +29,14 @@ public class AlunoModel {
         return aluno;
   }
 
+  public static AlunoModel buscarPorId(Integer id) throws Exception {
+    for (AlunoModel aluno : listaAlunos) {
+      if (aluno.getId().equals(id)) {
+        return aluno;
+      }
+    }
+    throw new Exception("Aluno não encontrado!");
+  }
+
 
 }
